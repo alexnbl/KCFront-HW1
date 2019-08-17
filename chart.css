@@ -1,0 +1,85 @@
+html,body{
+  font-family: 'Shadows Into Light', cursive;
+  margin: 0;
+  padding: 0;
+
+}
+/*
+Graph Class
+*/
+.graph {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  /*My attempt at a CSS Variable*/
+  grid-template-rows: repeat(var(--scale), minmax(0, 1fr)) 1.4rem;
+  grid-column-gap: 20px;
+
+}
+h1,h2,h3{
+  text-align: center;
+  color: #34495e;
+}
+.bar{
+  height: 400px;
+  max-width: 800px;
+  margin: 0 auto 10px auto;
+  line-height: 100px;
+  font-size: 38px;
+  color: white;
+  padding: 0 0 0 10px;
+  position: relative;
+}
+.bar::before{
+  content: '';
+  width: 100%;
+  position: absolute;
+  left: 0;
+  height: 1px;
+  top: auto;
+  background: #D0D3D4;
+}
+.bar::after{
+  content: '';
+  background: #2ecc71;
+  height: 100px;
+  transition: 0.7s;
+  display: block;
+  width: 100%;
+  -webkit-animation: bar-before 1 4.8s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.usa::after{
+  max-height: 60%;
+  background: #bb1542;
+}
+.france::after{
+  max-height: 72%;
+  background: #eb5f5d;
+}
+.japan::after{
+  max-height: 47%;
+  background: #fabc74;
+}
+.india::after{
+  max-height: 20%;
+  background: #239f95;
+}
+.chile::after{
+  max-height: 45%;
+  background: #f96d15;
+}
+.zambia::after{
+  max-height: 78%;
+  background: #5ca0d3;
+}
+@-webkit-keyframes bar-before{
+  0%{
+    height: 0px;
+  }
+  100%{
+    height: 100%;
+  }
+}
